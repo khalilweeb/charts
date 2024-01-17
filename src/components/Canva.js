@@ -1,4 +1,3 @@
-// Canva.jsx
 import React, { useEffect, useRef, useState } from "react";
 import clss from "./Canva.module.css";
 import Tooltip from "./Tooltip";

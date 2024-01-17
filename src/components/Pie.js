@@ -1,9 +1,7 @@
-// PieChart.jsx
 import React, { useEffect, useRef, useState } from "react";
 import clss from "./PieChart.module.css";
 import Tooltip from "./Tooltip";
 
-// Sample datasets
 const datasets = [
   {
     label: 'Category 1',
@@ -25,7 +23,6 @@ const datasets = [
     data: 20,
     color: 'black',
   },
-  // Add more datasets as needed
 ];
 
 const PieChart = () => {
