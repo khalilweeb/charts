@@ -1,0 +1,50 @@
+/* Canva.module.css */
+.chartContainer {
+position: relative;
+padding: 50px;
+
+  }
+
+
+  .chartContainer  canvas {
+    padding: 20px;
+  }
+  
+  .legendContainer {
+    display: flex;
+    width: 700px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+ }
+  
+  .legendItem {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    background-color: rgba(0, 0, 0, 0.822);
+    color: aliceblue;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    
+    /* text-decoration: line-through; */
+  }
+  
+  .legendColor {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  
+  .legendLabel {
+    font-size: 14px;
+  }
+
+  .c {
+
+    border-radius: 10px;
+  }
+  

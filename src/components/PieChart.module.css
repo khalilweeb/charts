@@ -1,0 +1,39 @@
+/* PieChart.module.css */
+.chartContainer {
+    position: relative;
+  }
+  
+  .c {
+    border-radius: 50%;
+    display: block;
+   
+  }
+  
+  .legendContainer {
+    position: absolute;
+    right: 60%;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  .legendItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.692);
+    color: white;
+    padding: 10px;
+  }
+  
+  .legendColor {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  
+  .legendLabel {
+    font-size: 14px;
+  }
