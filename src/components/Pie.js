@@ -4,22 +4,22 @@ import Tooltip from "./Tooltip";
 
 const datasets = [
   {
-    label: 'Category 1',
+    label: 'trade 1',
     data: 50,
     color: '#4CAF50',
   },
   {
-    label: 'Category 2',
+    label: 'trade 2',
     data: 30,
     color: '#2196F3',
   },
   {
-    label: 'Category 3',
+    label: 'trade 3',
     data: 20,
     color: 'red',
   },
   {
-    label: 'Category 3',
+    label: 'trade 3',
     data: 20,
     color: 'black',
   },

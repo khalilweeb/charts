@@ -58,7 +58,8 @@ const Canva = (props) => {
     canvas.width = 700;
     canvas.height = 400;
 
-    const maxValue = Math.max(...datasets.flatMap(dataset => dataset.data.map(item => item.amount)));
+    const maxValue = Math.max(...datasets.flatMap(dataset => dataset
+      .data.map(item => item.amount)));
 
     //  background 
     context.beginPath();
@@ -72,37 +73,46 @@ const Canva = (props) => {
 
     // Draw x-axis
     context.beginPath();
+
     context.moveTo(60, 370);
     context.lineTo(660, 370);
     context.stroke();
 
     // Draw y-axis
+
+
     context.beginPath();
     context.moveTo(60, 370);
     context.lineTo(60, 20);
+
     context.stroke();
 
     // x-axis labels
     context.fillStyle = "#333";
     context.font = "16px 'Courier New', Courier, monospace";
-    datasets[0].data.forEach((item, index) => {
+    datasets[0].data.forEach((item,  index) => {
+
       const x = 60 + index * 100 + 50;
       const y = 390;
       context.fillText("-", x - 5, y + 5);
       context.fillText(item.label, x, y + 5);
+
     });
 
     // Draw y-axis labels
     context.textAlign = "center";
     context.textBaseline = "middle";
+
+
     context.fillStyle = "#333";
     context.font = "14px sans feria";
     for (let i = 0; i <= maxValue; i += 20) {
       const x = 50;
+
       const y = 370 - (i / maxValue) * 350;
       context.save();
       context.translate(x, y);
-      context.rotate(-Math.PI / 2);
+      context.rotate(  -Math.PI / 2);
       context.fillText(i.toString(), 0, 0);
       context.restore();
     }
@@ -111,13 +121,16 @@ const Canva = (props) => {
     datasets.forEach((dataset, datasetIndex) => {
       dataset.data.forEach((item, index) => {
         if (datasetVisibility[datasetIndex]) {
-          const gradient = gradientColor(item.color, 0.5);
-          context.fillStyle = gradient;
-          const barHeight = (item.amount / maxValue) * 350;
-          const x = 80 + index * 100 + datasetIndex * 40;
-          const y = 370 - barHeight;
 
-          const barWidth = 40;
+
+          const gradient = gradientColor(item.color, 0.5);
+          context.fillStyle =  gradient;
+      const barHeight = (item.amount / maxValue) * 350;
+      const x = 80 + index * 100 + datasetIndex * 40;
+
+            const y = 370 - barHeight;
+
+            const barWidth = 40;
 
           context.fillRect(x, y, barWidth, barHeight);
 
@@ -132,10 +145,12 @@ const Canva = (props) => {
             setTooltip({
               x: mouseX + 10,
               y: mouseY - 10,
-              label: item.label,
-              value: item.amount,
-              color: item.color,
-            });
+                label: item.label,
+                value: item.amount,
+                color: item.color,
+
+
+              });
           }
         }
       });
@@ -144,9 +159,10 @@ const Canva = (props) => {
 
   const toggleDatasetVisibility = (index) => {
     setDatasetVisibility((prevVisibility) => {
-      const newVisibility = [...prevVisibility];
-      newVisibility[index] = !newVisibility[index];
-      return newVisibility;
+          const newVisibility = [...prevVisibility];
+
+          newVisibility[index] = !newVisibility[index];
+          return newVisibility;
     });
   };
 
